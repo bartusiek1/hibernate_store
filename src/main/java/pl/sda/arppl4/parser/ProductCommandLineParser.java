@@ -155,6 +155,7 @@ public class ProductCommandLineParser {
                     //   DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyy-MM-dd");
                     expiryDate = LocalDate.parse(expiryDateString, FORMATTER);
 
+                        // ten blok nie działa... nie wiem dlaczego...
                     LocalDate today = LocalDate.now();
                     if (expiryDate.isBefore(today)) {
                         // błąd, expiry date jest przed dzisiejszym dniem
