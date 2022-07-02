@@ -8,10 +8,7 @@ package pl.sda.arppl4.model;
         - Jednostka
 */
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -33,5 +30,7 @@ public class Product {
     private String producent;
     private LocalDate expiryDate;
     private Double quantity;
-    private ProductUnit unit;   // FIXME: nie działa dobrze....
+
+    @Enumerated(EnumType.STRING)
+    private ProductUnit unit;   // hibetnate czyta enumy wg kolejności i przypisuje do nich nr: 0,1,2
 }
